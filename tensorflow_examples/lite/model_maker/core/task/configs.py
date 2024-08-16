@@ -16,10 +16,10 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-from builtins import object
 
 from typing import Optional, Union
 
+import numpy
 import tensorflow as tf
 from tensorflow_examples.lite.model_maker.core import compat
 from tensorflow_examples.lite.model_maker.core.api import mm_export
@@ -52,7 +52,7 @@ def _get_representative_dataset_gen(dataset, num_steps):
 
 
 @mm_export('config.QuantizationConfig')
-class QuantizationConfig(object):
+class QuantizationConfig(numpy.object_):
   """Configuration for post-training quantization.
 
   Refer to
