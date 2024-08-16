@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: tensorflow-examples
+Version: 0.1710838782.1102997140263264685286612047860008012396059128122
+Summary: tensorflow_examples is a package of tensorflow example code.
+Home-page: http://github.com/tensorflow/examples
+Download-URL: https://github.com/tensorflow/examples/tags
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Keywords: tensorflow examples
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+License-File: LICENSE
+License-File: AUTHORS
+Requires-Dist: absl-py
+Requires-Dist: six
+Provides-Extra: tests
+Requires-Dist: jupyter; extra == "tests"
