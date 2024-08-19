@@ -1,5 +1,0 @@
-absl-py
-six
-
-[tests]
-jupyter
