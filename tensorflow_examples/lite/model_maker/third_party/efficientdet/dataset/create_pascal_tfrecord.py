@@ -169,14 +169,14 @@ def dict_to_tf_example(data,
 
       difficult_obj.append(int(difficult))
 
-      xmin = float(obj['bndbox']['xmin'])
-      ymin = float(obj['bndbox']['ymin'])
-      xmax = float(obj['bndbox']['xmax'])
-      ymax = float(obj['bndbox']['ymax'])
-      xmin.append(xmin / width)
-      ymin.append(ymin / height)
-      xmax.append(xmax / width)
-      ymax.append(ymax / height)
+      xmin_ = float(obj['bndbox']['xmin'])
+      ymin_ = float(obj['bndbox']['ymin'])
+      xmax_ = float(obj['bndbox']['xmax'])
+      ymax_ = float(obj['bndbox']['ymax'])
+      xmin.append(xmin_ / width)
+      ymin.append(ymin_ / height)
+      xmax.append(xmax_ / width)
+      ymax.append(ymax_ / height)
       area.append((xmax[-1] - xmin[-1]) * (ymax[-1] - ymin[-1]))
       classes_text.append(obj['name'].encode('utf8'))
       classes.append(label_map_dict[obj['name']])
@@ -192,10 +192,10 @@ def dict_to_tf_example(data,
         poses.append(raw_pose.encode('utf8'))
 
       if ann_json_dict:
-        abs_xmin = int(round(xmin))
-        abs_ymin = int(round(ymin))
-        abs_xmax = int(round(xmax))
-        abs_ymax = int(round(ymax))
+        abs_xmin = int(round(xmin_))
+        abs_ymin = int(round(ymin_))
+        abs_xmax = int(round(xmax_))
+        abs_ymax = int(round(ymax_))
         abs_width = abs_xmax - abs_xmin
         abs_height = abs_ymax - abs_ymin
         ann = {
